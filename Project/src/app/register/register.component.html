@@ -1,0 +1,52 @@
+<div class="col-md-4 col-md-offset-4">
+<div class="title">
+ <h2> Register for a Free Account</h2>
+</div>
+<form [formGroup]="register" (ngSubmit)="onRegister()">
+  <div class="formgroup">
+    <label class="control-label" for="r_name">
+      Name
+    <sup style="color:red">*</sup>
+    </label>
+    <div class="controls">
+      <input type="text" class="form-control" id="r_name" name="r_name" formControlName="r_name"  placeholder="Name">
+    </div>
+  </div>
+  <br>
+  <div class="formgroup">
+    <label class="control-label" for="r_email">
+      Email
+    <sup style="color:red">*</sup>
+    </label>
+    <div class="controls">
+      <input type="text"  id="r_email" class="form-control" name="r_email" formControlName="r_email"  placeholder="Email">
+    </div>
+  </div>
+  <br>
+  <div class="formgroup">
+    <label class="control-label" for="r_password">
+      Password
+    <sup style="color:red">*</sup>    
+    </label>
+    <div class="controls">
+      <input type="password" id="r_password" class="form-control" name="r_password" formControlName="r_password" placeholder="Password">
+    </div>
+  </div>
+  <br>
+  <div class="formgroup">
+    <label class="control-label" for="r_matchpassword">
+      Password
+    <sup style="color:red">*</sup>    
+    </label>
+    <div class="controls">
+      <input type="password" class="form-control" id="r_matchpassword" name="r_matchpassword" formControlName="r_matchpassword" placeholder="Type your Password Again">
+    </div>
+  </div>
+  <br>
+  <div class="formgroup">
+    <div class="controls">
+      <button type="submit" class="btn btn-success">Create An Account</button>
+    </div>
+  </div>
+</form>
+</div>

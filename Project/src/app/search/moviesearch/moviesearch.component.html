@@ -1,0 +1,43 @@
+<app-autocomplete></app-autocomplete> 
+<div class="container">
+<div class="col-md-8">
+ <ng-select    [allowClear]="true"
+              [items]="names"
+              [disabled]="disabled"
+              (data)="refreshValue($event)"
+              (selected)="selected($event)"
+              (removed)="removed($event)"
+              (typed)="typed($event)"
+              placeholder="No Movie selected">
+  </ng-select>
+</div>
+  <form [formGroup]="dateform"(ngSubmit)="onSearch(date)" #date="ngForm">
+  <div class="col-md-3">
+<input class="form-control"type="date" ngModel formControlName="traveldate" name="traveldate">
+  </div>
+  <div class="col-md-1">
+<button type="submit" class="btn btn-warning">SEARCH</button>
+  </div>
+</form>
+</div>
+  <br><br>
+  
+ <div class="col-md-4 col-md-offset-4" (click)="toMovieDetail(selectedMovie)" *ngIf="toShow">
+   <article class="panel panel-info" >
+    <div class="panel-heading">
+       <strong>{{selectedMovie.name}}</strong>
+    </div>
+    <div class="panel-body">
+    <strong>ShowTime: {{selectedMovie.ShowTime}}</strong><br>
+    <strong>Tickets Available: {{selectedMovie.tickets}}</strong>
+    </div>
+    <footer class="panel-footer">
+        <div class="author">
+            <strong>PostedBy:</strong>{{selectedMovie.PostedBy}}
+        </div>
+        <div class="config">
+           <button type="button" class="btn btn-info">Contact : <strong>{{selectedMovie.phone}}</strong></button>
+        </div>
+    </footer>
+    </article>
+  </div>

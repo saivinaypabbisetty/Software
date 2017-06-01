@@ -1,0 +1,17 @@
+hr { 
+    display: block;
+    margin-top: 1.0em;
+    margin-bottom: 1.0em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
+.fixedfooter
+{
+    position:fixed;
+}
+.fixedfooter a
+{
+    color:red;
+}

@@ -1,0 +1,59 @@
+
+  <div class="col-md-4">
+<ng-select class="col"  [allowClear]="true"
+              [items]="fromNames"
+              [disabled]="disabledfrom"
+              (data)="refreshValuefrom($event)"
+              (selected)="selectedfrom($event)"
+              (removed)="removedfrom($event)"
+              (typed)="typedfrom($event)"
+              placeholder="From">
+          
+</ng-select>
+  </div>
+  <div class="col-md-4">
+<ng-select class="col" [allowClear]="true"
+              [items]="toNames"
+              [disabled]="disabledto"
+              (data)="refreshValueto($event)"
+              (selected)="selectedto($event)"
+              (removed)="removedto($event)"
+              (typed)="typedto($event)"
+              placeholder="To">
+</ng-select>
+</div>
+<form [formGroup]="dateform"(ngSubmit)="onSearch(date)" #date="ngForm">
+  <div class="col-md-3">
+<input class="form-control"type="date" ngModel formControlName="traveldate" name="traveldate">
+  </div>
+  <div class="col-md-1">
+<button type="submit" class="btn btn-warning">SEARCH</button>
+  </div>
+</form>
+
+<br><br><br>
+<div class="col-md-4 col-md-offset-4" (click)="toBusDetail(selectedBus)" *ngIf="toShow">
+   <article class="panel panel-info" *ngIf="selectedBus">
+    <div class="panel-heading">
+       <strong>{{selectedBus.from}} To {{selectedBus.to}}</strong>
+    </div>
+    <div class="panel-body">
+    <strong>Departure Time: {{selectedBus.DepTime}}</strong><br>
+    <strong>Destination Time: {{selectedBus.ReachBy}}</strong><br>
+
+    <strong>Tickets Available: {{selectedBus.tickets}}</strong>
+    </div>
+    <footer class="panel-footer">
+        <div class="author">
+            <strong>PostedBy:</strong>{{selectedBus.PostedBy}}
+        </div>
+        <div class="config">
+           <button type="button" class="btn btn-info">Contact : <strong>{{selectedBus.phone}}</strong></button>
+        </div>
+    </footer>
+    </article>
+  </div>
+  <br>
+<div class="row" *ngIf="BusesAvailable===false">
+<p><strong>Currently No Bus Tickets are available between these stations</strong></p> 
+</div>  

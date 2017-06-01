@@ -1,0 +1,30 @@
+<hr>
+<div class="container">
+<div class="col-md-4 col-md-offset-4">
+<h1>Latest Bus Posts:</h1>
+<hr>
+<ul id="display-inline-block" class="panel-group" *ngFor="let bus of list">
+<li (click)="toBusDetail(bus)">
+   <article class="panel panel-info">
+    <div class="panel-heading">
+       <strong>{{bus.from}} To {{bus.to}}</strong>
+    </div>
+    <div class="panel-body">
+    <strong>Departure Time: {{bus.DepTime}}</strong><br>
+    <strong>Destination Time: {{bus.ReachBy}}</strong><br>
+
+    <strong>Tickets Available: {{bus.tickets}}</strong>
+    </div>
+    <footer class="panel-footer">
+        <div class="author">
+            <strong>PostedBy:</strong>{{bus.PostedBy}}
+        </div>
+        <div class="config">
+           <button type="button" class="btn btn-info">Contact : <strong>{{bus.phone}}</strong></button>
+        </div>
+    </footer>
+    </article>
+  </li>
+</ul>
+</div>
+</div>

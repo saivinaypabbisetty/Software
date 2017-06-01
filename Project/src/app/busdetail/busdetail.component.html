@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row" *ngIf="selectedBus">
+        <h1 class="col-md-6 col-md-offset-4 ">Ticket(s) Details:</h1>
+        <div class="col-md-6">
+            <label class="col-md-4">
+             From:   
+            </label>
+          <div class="col-md-8">
+              {{this.from}}
+          </div>
+        </div>
+        <div class="col-md-6">
+            <label class="col-md-4">
+             To:   
+            </label>
+          <div class="col-md-8">
+              {{this.to}}
+          </div>
+        </div>
+         <div class="col-md-6">
+            <label class="col-md-4">
+             Date: 
+            </label>
+          <div class="col-md-8">
+              {{this.selectedBus.date}}
+          </div>
+         </div> 
+          <div class="col-md-6">
+            <label class="col-md-4">
+             Departure time:
+            </label>
+          <div class="col-md-8">
+              {{this.selectedBus.DepTime}}
+          </div> 
+         </div> 
+            <div class="col-md-6">
+            <label class="col-md-4">
+             Destination Time: 
+            </label>
+          <div class="col-md-8">
+              {{this.selectedBus.ReachBy}}
+          </div> 
+          </div>
+        <div class="col-md-6">
+            <label class="col-md-4">
+             Tickets: 
+            </label>
+          <div class="col-md-8">
+              {{this.selectedBus.tickets}}
+          </div>
+        </div>
+         <div class="col-md-6">
+             <label class="col-md-4">
+             Total Price:   
+            </label>
+          <div class="col-md-8">
+              {{this.selectedBus.cost}}
+          </div>
+        </div> 
+         <div class="col-md-6">
+             <label class="col-md-4">
+             Contact:   
+            </label>
+          <div class="col-md-8">
+              {{this.selectedBus.phone}}
+          </div>
+        </div> 
+    </div>
+</div>
