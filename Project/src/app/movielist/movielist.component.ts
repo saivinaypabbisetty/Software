@@ -13,7 +13,7 @@ export class MovielistComponent implements OnInit {
   list:Movie[];
   mlist:Movie[];
   movielist:Movie[]= this._appservice.getMovie();
-  buslist:Bus[]=this._appservice.getBus();
+
  
   lst:number[];
   bst:number[];
@@ -43,10 +43,5 @@ fromRecentposttoMovieDetail(recentMovie:Movie)
    console.log(recentMovie.name ," movie clicked");
    this.router.navigate(['/home',recentMovie.name]);
 }
-fromRecentposttoBusDetail(recentBus:Bus)
-{
-  console.log(recentBus.from)
-  console.log(recentBus.to,"Bus clicked")
-  this.router.navigate(['/home',recentBus.from,recentBus.to])
-}
+
 }

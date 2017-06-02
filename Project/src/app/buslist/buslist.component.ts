@@ -12,6 +12,7 @@ import { AutocompleteComponent } from 'app/autocomplete/autocomplete.component';
   styleUrls: ['./buslist.component.css']
 })
 export class BuslistComponent implements OnInit {
+recentBuslist:Bus[]=this._appservice.getBus();
 buslist:Bus[];
 list:Bus[];
 constructor(private _appservice:AppService,private _http:Http,private router:Router,private route:ActivatedRoute){}
@@ -31,4 +32,10 @@ toBusDetail(bus:Bus)
       // console.log(bus.from,",",bus.to ," bus clicked");
       this.router.navigate(['/home',bus.from,bus.to]);  //THIS IS ABSOLUTE NAVIGATION
  }
+fromRecentposttoBusDetail(recentBus:Bus)
+{
+  console.log(recentBus.from)
+  console.log(recentBus.to,"Bus clicked")
+  this.router.navigate(['/home',recentBus.from,recentBus.to])
+}
 }
