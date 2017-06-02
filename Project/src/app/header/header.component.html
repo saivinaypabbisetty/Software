@@ -16,7 +16,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <!--<li *ngIf='this.currentUser.userId!=="null"'><a>Welcome</a></li>-->
-        <li><a><span *ngIf='this.currentUser.userId!=="null"'>Welcome </span> {{this.currentUser.userName}}</a></li>
+        <li><a><span *ngIf='this.currentUser.userId!=="null"'>Welcome✴ </span> {{this.currentUser.userName}}</a></li>
         <li *ngIf='this.currentUser.userId=="null"' routerLinkActive="active"><a routerLink='/login'>Login</a></li>
         <li *ngIf='this.currentUser.userId=="null"' routerLinkActive="active"><a routerLink='/register'>Register</a></li>
         <li *ngIf='this.currentUser.userId!=="null"'><a href="#">Logout</a></li>

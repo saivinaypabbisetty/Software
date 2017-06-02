@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{Movie} from '../../models/movie.model'
 import{Bus} from '../../models/bus.model'
+import{User} from '../../models/user.model'
 import{FormGroup,FormBuilder,NgForm} from '@angular/forms'
 import{AppService}from'../app.service'
 import{Http}from'@angular/http'
@@ -12,6 +13,7 @@ import{Http}from'@angular/http'
 export class PostticketComponent implements OnInit {
  postMovietickets:FormGroup;
  postBustickets:FormGroup;
+ currentUser:User=this._appservice.currentUser;
  tst:number[];
  bst:number[];
  temparrnumbers:any;
@@ -48,7 +50,7 @@ constructor(private _appservice:AppService,_http:Http,private _formBuilder:FormB
       ReachByminutes:[],
       bus_tickets:[],
       cost:[],
-      bus_phone:[],
+      bus_phone:[] ,
 
     })  }
    onMovieSubmit(form: NgForm) 
@@ -63,7 +65,7 @@ constructor(private _appservice:AppService,_http:Http,private _formBuilder:FormB
    }
    onBusSubmit(form:NgForm)
    {
-     const bus=new Bus(form.value.from,form.value.tos,form.value.Dephours,form.value.Depminutes,form.value.ReachByhours,form.value.ReachByminutes,form.value.bus_tickets,form.value.cost,form.value.PostedBy,form.value.bus_phone)
+     const bus=new Bus(form.value.from,form.value.tos,form.value.date,form.value.Dephours,form.value.Depminutes,form.value.ReachByhours,form.value.ReachByminutes,form.value.bus_tickets,form.value.cost,form.value.PostedBy,form.value.bus_phone)
      let tempbus=this._appservice.getBus();
      tempbus.push(bus);
      this._appservice.setBus(tempbus);

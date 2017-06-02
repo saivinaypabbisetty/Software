@@ -1,4 +1,7 @@
-<div class="col-md-8 col-md-offset-2">
+<div *ngIf='this.currentUser.userId=="null"' class="container">
+<h2><strong>You must login to post your tickets <button routerLink='/login' class="btn btn-warning">Login</button> </strong></h2>
+</div>    
+<div *ngIf='this.currentUser.userId!=="null"'class="col-md-8 col-md-offset-2">  
      <div class="title">
      <h2> POST YOUR TICKETS </h2>
      </div>
@@ -12,10 +15,8 @@
       <li (click)="showbusform()"><a>Bus</a></li>
     </ul>
   </div>
- </div>
 <br><br>
-<div class="col-md-8 col-md-offset-2" *ngIf="showMovieform">
-    <form [formGroup]="postMovietickets" (ngSubmit)="onMovieSubmit(postmovie)" #postmovie="ngForm">
+    <form *ngIf="showMovieform" [formGroup]="postMovietickets" (ngSubmit)="onMovieSubmit(postmovie)" #postmovie="ngForm">
         <div class="form-group">
             <label class="control-label" for="movie_name">Movie Name</label>
             <div class="controls">
@@ -84,10 +85,8 @@
             </div>
           </div>
     </form>
-</div>
 <!--  break  -->
-<div class="col-md-8 col-md-offset-2" *ngIf="showBusform">
-<form [formGroup]="postBustickets" (ngSubmit)="onBusSubmit(postbus)" #postbus="ngForm">
+<form *ngIf="showBusform" [formGroup]="postBustickets" (ngSubmit)="onBusSubmit(postbus)" #postbus="ngForm">
         <div class="form-group">
             <label class="control-label" for="from">From</label>
             <div class="controls">
@@ -168,11 +167,11 @@
             <input type="tel" id="bus_phone" class="form-control" formControlName="bus_phone" ngModel name="bus_phone" required>
             </div>
          </div>
+         <br>
           
-          <div class="formgroup">
-            <div class="controls">
+          <div style="text-align:right;" class="formgroup">
             <button type="submit" class="btn btn-warning">PUBLISH</button>
-            </div>
           </div>
     </form>
+<br><br>
 </div>

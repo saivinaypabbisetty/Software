@@ -35,23 +35,19 @@ l_password:[]
     this.userlist=this.list;
   }
  onSubmit(form:NgForm){
-    this.currentUser.userId=form.value.l_email;
-    this.currentUser.password=form.value.l_password;
-    console.log("userId is",this.currentUser.userId);
-    console.log("password is",this.currentUser.password);
 
    for(let user of this.userlist)
     {
-     if(this.currentUser.userId==user.userId&&this.currentUser.password==user.password)
+     if(form.value.l_email==user.userId&&form.value.l_password==user.password)
        {
              this.currentUser.userName=user.userName;
+             this.currentUser.userId=user.userId;
+             this.currentUser.password=user.password;
              this.currentUser=user;  
            this.router.navigate(['/postticket']);
        }
-    }
-
-
     
+    }
     
     form.resetForm();
  }

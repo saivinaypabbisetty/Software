@@ -2,3 +2,8 @@ ul li
 {
 color:red;
 }
+div.col-md-4.col-md-offset-4
+
+{
+    background-color: lightgrey
+}

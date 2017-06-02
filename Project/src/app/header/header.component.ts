@@ -42,4 +42,8 @@ else{
 }
 }
 }
+logout()
+{
+  this.currentUser=this._appservice.currentUser;
+}
 }
