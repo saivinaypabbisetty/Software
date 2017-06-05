@@ -8,7 +8,7 @@
      <br>
     <label class="control-label" for="category">Which type of Ticket do you want to add?</label>
      <div class="btn-group"name="category">
-    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"> 
     Category <span class="caret"></span></button>
     <ul class="dropdown-menu" role="menu">
       <li (click)="showmovieform()"><a>Movie</a></li>
@@ -23,11 +23,18 @@
             <input type="text" id="movie_name" class="form-control" formControlName="movie_name" ngModel name="movie_name" placeholder="Movie Name" onfocus="this.placeholder=''" onblur="this.placeholder='Movie name'"required>
             </div>
         </div>
-        <br>
+        <br> 
         <div class="form-group">
             <label class="control-label" for="date">Date</label>
             <div class="controls">
             <input type="date" id="date" class="form-control" formControlName="date" ngModel name="date" required>
+            </div>
+        </div>
+        <br>
+         <div class="form-group">
+            <label class="control-label" for="venue">Venue</label>
+            <div class="controls">
+            <input type="text" id="venue" class="form-control" formControlName="venue" ngModel name="venue" placeholder="Venue" onfocus="this.placeholder=''" onblur="this.placeholder='Venue'"required>
             </div>
         </div>
         <br>

@@ -8,12 +8,13 @@
               (selected)="selected($event)"
               (removed)="removed($event)"
               (typed)="typed($event)"
-              placeholder="No Movie selected">
+              placeholder="No Movie selected"
+              >
   </ng-select>
 </div>
   <form [formGroup]="dateform"(ngSubmit)="onSearch(date)" #date="ngForm">
   <div class="col-md-3">
-<input class="form-control"type="date" ngModel formControlName="traveldate" name="traveldate">
+<input class="form-control"type="date" style="color:grey"ngModel formControlName="traveldate" name="traveldate">
   </div>
   <div class="col-md-1">
 <button type="submit" class="btn btn-warning">SEARCH</button>

@@ -1,6 +1,7 @@
 [{
 "name":"Baahubali",
 "ShowTime":"10:35",
+"venue":"Pvr Forum Sujana Mall",
 "date":"2017-08-14",
 "tickets":4,
 "cost":1000,
@@ -11,6 +12,7 @@
 {
 "name":"Srimanthudu",
 "ShowTime":"22:15",
+"venue":"Pvr Inorbit mall",
 "date":"2017-08-14",
 "tickets":2,
 "cost":1000,
@@ -21,6 +23,7 @@
 {
 "name":"AlienCovenant",
 "ShowTime":"16:50",
+"venue":"Cinepolis Manjeera Mall",
 "date":"2017-08-14",
 "tickets":1,
 "cost":100,
@@ -31,6 +34,7 @@
 {
 "name":"Luckunnodu",
 "ShowTime":"18:30",
+"venue":"Hitech theatre Madhapur",
 "date":"2017-08-14",
 "tickets":5,
 "cost":500,

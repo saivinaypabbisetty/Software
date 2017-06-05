@@ -73,7 +73,7 @@ toMovieDetail(movie:Movie)
     {
     if(movie.name==value.text)
     {      
-     
+      this.toShow=true;  
       this.selectedMovie=movie;
       console.log(this.selectedMovie);
     }
@@ -102,6 +102,13 @@ toMovieDetail(movie:Movie)
       this.toShow=true;     
       this.selectedMovie=movie;
       console.log(this.selectedMovie);
+    }
+  }
+   for(let movie of this.list)
+    {
+    if(this.MovieName!==movie.name&&form.value.traveldate!==movie.date)
+    { 
+      this.toShow=false;     
     }
     }
  }

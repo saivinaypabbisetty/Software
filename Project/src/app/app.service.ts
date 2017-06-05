@@ -16,6 +16,7 @@ export class AppService
 "name":"Spyder",
 "PostedBy":"Vinay",
 "date":"04-08-2017",
+"venue":"Pvr Forum Sujana Mall",
 "ShowTime":"10:35",
 "tickets":4,
 "cost":1000,

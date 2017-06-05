@@ -1,22 +1,13 @@
 
-
-<div *ngIf="selectedRecentmovie">
-<h2>DATE:{{this.selectedRecentmovie.date}}</h2> 
-<h2>SHOWTIME:{{this.selectedRecentmovie.ShowTime}}</h2> 
-<h2>No.of Tickets:{{this.selectedRecentmovie.tickets}}</h2>
-<h2>Total Price:{{this.selectedRecentmovie.cost}}</h2>
-<h2>Mobile:{{this.selectedRecentmovie.phone}}</h2>
-</div>
-
-
-<div class="container">
+<div class="col-sm-8 col-md-offset-2">
     <div class="row" *ngIf="selectedmovie">
-        <h1 class="col-md-6 col-md-offset-4 ">Movie Details:</h1>
+        <h2 class="col-md-offset-1">{{this.moviename}} - {{this.selectedmovie.ShowTime}} {{this.selectedmovie.tickets}}tickets @ {{this.selectedmovie.venue}}</h2>
+        <hr>
         <div class="col-md-6">
             <label class="col-md-4">
              Movie Name:   
             </label>
-          <div class="col-md-8">
+          <div class="col-md-6">
               {{this.moviename}}
           </div>
         </div>
@@ -24,15 +15,23 @@
             <label class="col-md-4">
              Date:   
             </label>
-          <div class="col-md-8">
+          <div class="col-md-6">
               {{this.selectedmovie.date}}
+          </div>
+        </div>
+        <div class="col-md-6">
+            <label class="col-md-4">
+             Show Time:   
+            </label>
+          <div class="col-md-6">
+              {{this.selectedmovie.ShowTime}}
           </div>
         </div>
         <div class="col-md-6">
             <label class="col-md-4">
              Tickets: 
             </label>
-          <div class="col-md-8">
+          <div class="col-md-6">
               {{this.selectedmovie.tickets}}
           </div>
         </div>
@@ -40,29 +39,38 @@
              <label class="col-md-4">
              Total Price:   
             </label>
-          <div class="col-md-8">
+          <div class="col-md-6">
               {{this.selectedmovie.cost}}
           </div>
         </div> 
-         <div class="col-md-6">
+         <!--<div class="col-md-6">
              <label class="col-md-4">
              Contact:   
             </label>
-          <div class="col-md-8">
+          <div class="col-md-6">
               {{this.selectedmovie.phone}}
           </div>
-        </div> 
+        </div> -->
     </div>
+    <br>
+    <br>
+    <div style="background-color:whitesmoke;border-style:ridge"class="col-md-12">
+    <strong class="col-md-offset-3">YOU MUST LOGIN TO CONTACT THE PUBLISHER</strong>
+      <a class="btn btn-warning btn-block" routerLink='/login'>LOGIN</a>
+      <a class="btn btn-warning btn-block" routerLink='/register'>SIGN UP</a>      
+    <br>
+    </div>
+    <br>
 </div>
 
-<div class="container">
+<!--<div class="container">
     <div class="row"*ngIf="selectedRecentmovie">
         <h1 class="col-md-6 col-md-offset-4 ">Movie Details:</h1>
         <div class="col-md-6">
             <label class="col-md-4">
              Movie Name:   
             </label>
-          <div class="col-md-8">
+          <div class="col-md-6">
               {{this.moviename}}
           </div>
         </div>
@@ -70,7 +78,7 @@
             <label class="col-md-4">
              Date:   
             </label>
-          <div class="col-md-8">
+          <div class="col-md-6">
               {{this.selectedRecentmovie.date}}
           </div>
         </div>
@@ -78,7 +86,7 @@
             <label class="col-md-4">
              Tickets: 
             </label>
-          <div class="col-md-8">
+          <div class="col-md-6">
               {{this.selectedRecentmovie.tickets}}
           </div>
         </div>
@@ -86,7 +94,7 @@
              <label class="col-md-4">
              Total Price:   
             </label>
-          <div class="col-md-8">
+          <div class="col-md-6">
               {{this.selectedRecentmovie.cost}}
           </div>
         </div> 
@@ -94,9 +102,17 @@
              <label class="col-md-4">
              Contact:   
             </label>
-          <div class="col-md-8">
+          <div class="col-md-6">
               {{this.selectedRecentmovie.phone}}
           </div>
         </div> 
     </div>
-</div>
+</div>-->
+
+
+<!--<div class="col-sm-6 col-md-offset-3">
+<h2 class="page-header">
+    Chaitanya Swaroop
+</h2>
+<hr class="after">
+</div>-->

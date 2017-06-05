@@ -28,10 +28,10 @@ constructor(private _appservice:AppService,_http:Http,private _formBuilder:FormB
   { 
     
     this.postMovietickets=this._formBuilder.group({
-     category:["Movie"],
      movie_name:["sai"],
      PostedBy:["vinay"],
      date:[5-10-1997],
+     venue:[],
      hours:[10],
      minutes:[50],
      movie_tickets:[5],
@@ -55,7 +55,7 @@ constructor(private _appservice:AppService,_http:Http,private _formBuilder:FormB
     })  }
    onMovieSubmit(form: NgForm) 
    {
-        const movie = new Movie(form.value.movie_name,form.value.PostedBy,form.value.date,form.value.hours,form.value.minutes,form.value.movie_tickets,form.value.cost,form.value.movie_phone);
+        const movie = new Movie(form.value.movie_name,form.value.PostedBy,form.value.date,form.value.venue,form.value.hours,form.value.minutes,form.value.movie_tickets,form.value.cost,form.value.movie_phone);
         let tempmovie = this._appservice.getMovie();
         tempmovie.push(movie);
         this._appservice.setMovie(tempmovie);

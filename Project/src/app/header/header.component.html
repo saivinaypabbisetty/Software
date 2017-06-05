@@ -20,7 +20,7 @@
         <li *ngIf='this.currentUser.userId=="null"' routerLinkActive="active"><a routerLink='/login'>Login</a></li>
         <li *ngIf='this.currentUser.userId=="null"' routerLinkActive="active"><a routerLink='/register'>Register</a></li>
         <li *ngIf='this.currentUser.userId!=="null"'><a href="#">Logout</a></li>
-        <li (click)="CheckUser()" class="btn btn-warning"><a>POST YOUR TICKETS</a></li>
+        <li (click)="CheckUser()" class="btn btn-warning btn-xs"><a>POST YOUR TICKETS</a></li>
       </ul>
     </div>
   </div>
