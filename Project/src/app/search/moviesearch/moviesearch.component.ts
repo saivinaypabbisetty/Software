@@ -21,6 +21,7 @@ export class MoviesearchComponent implements OnInit {
   temp:string[]=["start"]
   names:string[];
   movielist:Movie[];
+  ticketsNotAvailable:boolean;
    private value:any = {};
   private _disabledV:string = '0';
   private disabled:boolean = false;
@@ -100,14 +101,16 @@ toMovieDetail(movie:Movie)
     if(this.MovieName==movie.name&&form.value.traveldate==movie.date)
     { 
       this.toShow=true;     
+      this.ticketsNotAvailable=false;
       this.selectedMovie=movie;
       console.log(this.selectedMovie);
     }
   }
    for(let movie of this.list)
     {
-    if(this.MovieName!==movie.name&&form.value.traveldate!==movie.date)
+    if(this.MovieName==movie.name&&form.value.traveldate!==movie.date)
     { 
+      this.ticketsNotAvailable=true;
       this.toShow=false;     
     }
     }

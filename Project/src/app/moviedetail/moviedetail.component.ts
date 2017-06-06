@@ -18,9 +18,8 @@ export class MoviedetailComponent implements OnInit {
   selectedRecentmovie:Movie;
   checkRecent:boolean=false;
 
-
   constructor(private _appservice:AppService,private _http:Http,private router:Router,private route:ActivatedRoute) {
-   ;
+   
    }
 
   ngOnInit() 
@@ -68,6 +67,10 @@ export class MoviedetailComponent implements OnInit {
         }
           
       }
+   }
+   toLogin()
+   {
+    //  this._appservice.redirectUrl=this._appservice.geturl();
    }
 }
 

@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   list:Movie[];
   showMoviesearch:boolean=true;
   showBussearch:boolean=false;
+  t:boolean=true;
+  f:boolean=true;
 
   showBus
   movielist:Movie[];
@@ -29,7 +31,6 @@ export class HomeComponent implements OnInit {
   showbussearch (){
     this.showMoviesearch=false;
     this.showBussearch=true;
-
 }
   showmoviesearch()
   {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{Router,ActivatedRoute,Params}from'@angular/router'
+import{Router,ActivatedRoute,Params,RouterState}from'@angular/router'
 import{Http} from '@angular/http';
 import{AppService}from'../app.service'
 import{User} from '../../models/user.model'
@@ -12,11 +12,12 @@ import { FormGroup, FormControl, Validators,FormBuilder,NgForm} from '@angular/f
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+url:string;
 loginform:FormGroup;
 userlist:User[];
 list:User[];
 currentUser:User=this._appservice.currentUser;
-constructor(private _appservice:AppService,private http:Http,private router:Router,private _formBuilder:FormBuilder)
+constructor(private _appservice:AppService,private http:Http,private router:Router,private _formBuilder:FormBuilder,private route:ActivatedRoute)
 { }
 
   ngOnInit() {
@@ -45,8 +46,16 @@ l_password:[]
              this.currentUser.password=user.password;
              this.currentUser=user;  
            this.router.navigate(['/postticket']);
+           console.log(this.route.parent);
+           console.log(this.route.pathFromRoot);
+           console.log(this.route.parent);
        }
     
+    }
+    if(this._appservice.isLoggedin)
+    {
+      this.url=this._appservice.redirectUrl
+      this.router.navigate([this.url]);
     }
     
     form.resetForm();

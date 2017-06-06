@@ -7,11 +7,10 @@ hr {
     border-style: inset;
     border-width: 1px;
 } 
-.fixedfooter
+/*footer
 {
-    position:fixed;
-}
-.fixedfooter a
-{
-    color:red;
-}
+    height: 100px; 
+    line-height: 100px;
+    background-color: #25250e;
+    border-top: 4px solid orange;
+}*/

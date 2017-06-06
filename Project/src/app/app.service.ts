@@ -1,8 +1,12 @@
 import {Movie} from '../models/movie.model';
 import {Bus} from '../models/bus.model';
+import { CanDeactivate,
+         ActivatedRouteSnapshot,
+         RouterStateSnapshot }  from '@angular/router';
 import {User} from '../models/user.model';
 import { Injectable} from '@angular/core';
 import {Http,Response,Headers} from '@angular/http';
+
 import {Observable} from 'rxjs/Observable';
 import'rxjs/add/operator/map';
 import'rxjs/add/operator/catch';
@@ -12,6 +16,10 @@ import'rxjs/add/observable/throw';
 export class AppService
 {
  currentUser:User={"userId":"null","password":"null","userName":""};
+ isLoggedin:boolean=this.CheckUser();
+ redirectUrl:string;
+ url:string;
+
  public addedMovies:Movie[]=[{
 "name":"Spyder",
 "PostedBy":"Vinay",
@@ -34,7 +42,7 @@ public addedBuses:Bus[]=[{
   "PostedBy":"Mahesh",
   "phone":"9866562643",
 }];
-constructor(private _http:Http,){
+constructor(private _http:Http){
 
 
  }
@@ -80,7 +88,13 @@ getusers=():any=>{
                              return Observable.throw(error||"Server error")});                                                    
 
 }
-
+CheckUser()
+{
+  if(this.currentUser.userId!=="null")
+  {
+  return true;
+}
+}
 }
 
 /*postmovies=():any=>{                          //I tried to push data into json but I failed doing it.

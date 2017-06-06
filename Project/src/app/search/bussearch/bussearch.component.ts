@@ -14,7 +14,7 @@ import { AutocompleteComponent } from 'app/autocomplete/autocomplete.component';
 export class BussearchComponent implements OnInit {
 dateform:FormGroup;
 toShow:boolean=false;
-BusesAvailable:boolean=true;
+BusesAvailable:boolean;
 fromName:string;
 toName:string;
 selectedBus:Bus;
@@ -47,7 +47,6 @@ this ._appservice.getbuses().subscribe(buslist=>{
   getJsonData()
 {
  this.list = this.buslist;
- console.log(this.list);
   for(let bus of this.list)
   {
     this.tempfrom.push(bus.from);
@@ -57,12 +56,10 @@ this ._appservice.getbuses().subscribe(buslist=>{
  this.tempto.splice(0,1);
 
  this.fromNames=this.tempfrom;
-  this.toNames=this.tempto;
- console.log(this.fromNames);
- console.log(this.toNames);
+ this.toNames=this.tempto;
 
  
-}
+} 
 toBusDetail(bus:Bus)
  {
       console.log(bus.from+","+bus.to +" bus clicked");
@@ -81,24 +78,17 @@ toBusDetail(bus:Bus)
   public selectedfrom(fromvalue:any):void {
      this.fromName=fromvalue.text;
      this.toShow=false;
-    //  this.noBusesAvailable=false;
     console.log('Selected from value is: ', fromvalue);
     for(let bus of this.list)
+    {
     if(this.fromName==bus.from&&this.toName==bus.to)
-    {  
-      //  this.noBusesAvailable=false;
-      //  this.toShow=true;
-       this.selectedBus=bus;
-      //  console.log("selected bus is ",this.selectedBus);
-       
-    }
-    else {
-      // this.noBusesAvailable=true;
-    }
-  }
+     {  
+       this.selectedBus=bus;       
+     }
+    }  
+}
  
   public removedfrom(fromvalue:any):void {
-    //  this.noBusesAvailable=false;
      this.toShow=false;
     console.log('Removed from value is: ', fromvalue);
   }
@@ -122,25 +112,19 @@ toBusDetail(bus:Bus)
 
   public selectedto(tovalue:any):void {
     this.toShow=false;
-    // this.noBusesAvailable=false;
     this.toName=tovalue.text;
     console.log('Selected to value is: ', tovalue);
     for(let bus of this.list)
+    {
     if(this.fromName==bus.from&&this.toName==bus.to)
     {  
-      //  this.noBusesAvailable=false;
-      //  this.toShow=true;
-       this.selectedBus=bus;
-      //  console.log("selected bus is ",this.selectedBus);
-       
+      this.toShow=true;
+      this.selectedBus=bus;
     }
-    else {
-      // this.noBusesAvailable=true;
     }
   }
 
   public removedto(tovalue:any):void {
-    // this.noBusesAvailable=false;
     this.toShow=false;
     console.log('Removed to value is: ', tovalue);
   }
@@ -150,29 +134,30 @@ toBusDetail(bus:Bus)
     console.log('New to search input: ', tovalue);
   }
 
-  public refreshValueto(tovalue:any):void {
-    // this.noBusesAvailable=false;
+  public refreshValueto(tovalue:any):void 
+  {
     this.tovalue = tovalue;
   }
- onSearch(form:NgForm)
+ 
+  onSearch(form:NgForm)
  {
    for(let bus of this.list)
+   {
     if(this.fromName==bus.from&&this.toName==bus.to&&form.value.traveldate==bus.date)
     {  
-       this.BusesAvailable=true;
-       console.log(this.BusesAvailable,"from if")
+       this.BusesAvailable=false;
        this.toShow=true;
        this.selectedBus=bus;
        console.log("selected bus is ",this.selectedBus);
+
     }
-    // if(this.fromName==bus.from||this.toName!=bus.to||form.value.traveldate!==bus.date)
-    // {
-    //  this.BusesAvailable=false;
-    //  console.log(this.BusesAvailable,"from else if")
-    // }  
-}
-clear()
-{
-  console.log("itworked");
-}
-}
+   }
+     if(form.value.traveldate!==this.selectedBus.date)    
+     {  
+       this.BusesAvailable=true;       
+       this.toShow=false;
+     }
+  } 
+  
+
+ } 

@@ -1,4 +1,4 @@
-
+<div col-md>
   <div class="col-md-4">
 <ng-select class="col"  [allowClear]="true"
               [items]="fromNames"
@@ -8,7 +8,7 @@
               (removed)="removedfrom($event)"
               (typed)="typedfrom($event)"
               placeholder="From">
-          
+           
 </ng-select>
   </div>
   <div class="col-md-4">
@@ -32,28 +32,26 @@
 </form>
 
 <br><br><br>
-<div class="col-md-4 col-md-offset-4" (click)="toBusDetail(selectedBus)" *ngIf="toShow">
-   <article class="panel panel-info" *ngIf="selectedBus">
+<alert type="danger" *ngIf="BusesAvailable" dismissible="true">
+<strong>NO BUS TICKETS ARE AVAILABLE ON SELECTED DATE</strong>
+</alert>
+<div *ngIf="toShow">
+<div (click)="fromRecentposttoBusDetail(bus)" class="panel-group" *ngIf="selectedBus">
+   <article class="panel panel-success">
     <div class="panel-heading">
        <strong>{{selectedBus.from}} To {{selectedBus.to}}</strong>
     </div>
     <div class="panel-body">
-    <strong>Departure Time: {{selectedBus.DepTime}}</strong><br>
-    <strong>Destination Time: {{selectedBus.ReachBy}}</strong><br>
-
+    <strong>Date: {{selectedBus.date}}</strong><br><br>        
+    <strong>Departure Time: {{selectedBus.DepTime}}</strong><br><br>
+    <strong>Destination Time: {{selectedBus.ReachBy}}</strong><br><br>
     <strong>Tickets Available: {{selectedBus.tickets}}</strong>
     </div>
     <footer class="panel-footer">
         <div class="author">
             <strong>PostedBy:</strong>{{selectedBus.PostedBy}}
         </div>
-        <div class="config">
-           <button type="button" class="btn btn-info">Contact : <strong>{{selectedBus.phone}}</strong></button>
-        </div>
     </footer>
     </article>
-  </div>
-  <br>
-<div class="row" *ngIf="BusesAvailable===false">
-<p><strong>Currently No Bus Tickets are available between these stations</strong></p> 
-</div>  
+</div>
+</div>

@@ -6,8 +6,7 @@ import { HttpModule } from '@angular/http';
 import {RouterModule} from "@angular/router";
 import { routing } from "./app.routing";
 import {SelectModule} from 'ng2-select';
-import {DpDatePickerModule} from 'ng2-date-picker';
-
+import { AlertModule } from 'ngx-bootstrap/alert';
 import {Bus} from '../models/bus.model'
 import {Movie} from 'models/movie.model'
 
@@ -26,6 +25,7 @@ import { PostticketComponent } from './postticket/postticket.component';
 import { MoviedetailComponent } from './moviedetail/moviedetail.component';
 import { BusdetailComponent } from './busdetail/busdetail.component';
 import { BuslistComponent } from './buslist/buslist.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -43,7 +43,8 @@ import { BuslistComponent } from './buslist/buslist.component';
     PostticketComponent,
     MoviedetailComponent,
     BusdetailComponent,
-    BuslistComponent
+    BuslistComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +53,7 @@ import { BuslistComponent } from './buslist/buslist.component';
     ReactiveFormsModule,
     routing,
     SelectModule,
-    DpDatePickerModule,
+    AlertModule.forRoot(),
   ],
   bootstrap: [AppComponent],
   providers:[AppService]

@@ -1,22 +1,22 @@
- <hr>
+
 <div class="container">
 <div class="col-md">
 <h1>Latest Bus Posts:</h1>
 <hr>
-<div id="display-inline-block" (click)="toBusDetail(bus)" class="panel-group" *ngFor="let bus of list">
-   <article class="panel panel-info">
+<div (click)="toBusDetail(bus)" class="panel-group" *ngFor="let bus of list">
+   <article class="panel panel-success">
     <div class="panel-heading">
        <strong>{{bus.from}} To {{bus.to}}</strong>
     </div>
     <div class="panel-body">
-    <strong>Departure Time: {{bus.DepTime}}</strong><br>
-    <strong>Destination Time: {{bus.ReachBy}}</strong><br>
-
+    <strong>Travel Date: {{bus.date}}</strong><br><br>
+    <strong>Departure Time: {{bus.DepTime}}</strong><br><br>
+    <strong>Destination Time: {{bus.ReachBy}}</strong><br><br>
     <strong>Tickets Available: {{bus.tickets}}</strong>
     </div>
     <footer class="panel-footer">
         <div class="author">
-            <strong>PostedBy:</strong>{{bus.PostedBy}}
+            <strong>PostedBy : </strong> {{bus.PostedBy}}
         </div>
         <!--<div class="config">
            <button type="button" class="btn btn-info">Contact : <strong>{{bus.phone}}</strong></button>
@@ -26,30 +26,27 @@
 </div>
 </div>
 </div>
-
 <div class="container">
 <div class="col-md">
 <h1>Recently Added Bus Tickets:</h1>
 <hr>
-<div id="display-inline-block" (click)="fromRecentposttoBusDetail(bus)" class="panel-group" *ngFor="let bus of recentBuslist">
-   <article class="panel panel-info">
+<div (click)="fromRecentposttoBusDetail(bus)" class="panel-group" *ngFor="let bus of recentBuslist">
+   <article class="panel panel-success">
     <div class="panel-heading">
        <strong>{{bus.from}} To {{bus.to}}</strong>
     </div>
     <div class="panel-body">
-    <strong>Departure Time: {{bus.DepTime}}</strong><br>
-    <strong>Destination Time: {{bus.ReachBy}}</strong><br>
-
+    <strong>Date: {{bus.date}}</strong><br><br>        
+    <strong>Departure Time: {{bus.DepTime}}</strong><br><br>
+    <strong>Destination Time: {{bus.ReachBy}}</strong><br><br>
     <strong>Tickets Available: {{bus.tickets}}</strong>
     </div>
     <footer class="panel-footer">
         <div class="author">
-            <strong>PostedBy:</strong>{{bus.PostedBy}}
-        </div>
-        <div class="config">
-           <button type="button" class="btn btn-info">Contact : <strong>{{bus.phone}}</strong></button>
+            <strong>PostedBy : </strong> {{bus.PostedBy}}
         </div>
     </footer>
     </article>
+</div>
 </div>
 </div>
