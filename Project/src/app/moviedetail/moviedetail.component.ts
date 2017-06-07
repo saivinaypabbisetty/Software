@@ -46,28 +46,19 @@ export class MoviedetailComponent implements OnInit {
           if(this.moviename==movie.name)
           {
           this.selectedmovie=movie;
-          console.log(this.selectedmovie);
           break
           }
+       }
           
-        else if(this.moviename !== movie.name)
-        {
-         
-        for(let recentMovie of this.movielist)
-           {
-             if(this.moviename==recentMovie.name)
-             {
-               this.selectedmovie=recentMovie;
-               console.log(this.selectedmovie);
-               break;
-             }
-            
-           }
-         
-        }
-          
-      }
-   }
+  for(let recentMovie of this.movielist)
+       {
+          if(this.moviename==recentMovie.name)
+          {
+          this.selectedmovie=recentMovie;
+          break;
+          }
+       }
+}
    toLogin()
    {
     //  this._appservice.redirectUrl=this._appservice.geturl();

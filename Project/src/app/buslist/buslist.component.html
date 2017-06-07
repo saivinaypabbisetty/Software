@@ -30,7 +30,7 @@
 <div class="col-md">
 <h1>Recently Added Bus Tickets:</h1>
 <hr>
-<div (click)="fromRecentposttoBusDetail(bus)" class="panel-group" *ngFor="let bus of recentBuslist">
+<div (click)="toBusDetail(bus)" class="panel-group" *ngFor="let bus of recentBuslist">
    <article class="panel panel-success">
     <div class="panel-heading">
        <strong>{{bus.from}} To {{bus.to}}</strong>

@@ -29,7 +29,7 @@ hr {
 	box-shadow: 0 10px 10px -10px #f4df42 inset;
 }
 .spinner {
-  margin: 100px auto 0;
+  margin: 1000px auto 0;
   width: 70px;
   text-align: center;
 }
@@ -54,7 +54,7 @@ hr {
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
-
+  
 @-webkit-keyframes sk-bouncedelay {
   0%, 80%, 100% { -webkit-transform: scale(0) }
   40% { -webkit-transform: scale(1.0) }

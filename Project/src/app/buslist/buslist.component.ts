@@ -29,13 +29,7 @@ constructor(private _appservice:AppService,private _http:Http,private router:Rou
 }
 toBusDetail(bus:Bus)
  {
-      // console.log(bus.from,",",bus.to ," bus clicked");
-      this.router.navigate(['/home',bus.from,bus.to]);  //THIS IS ABSOLUTE NAVIGATION
+  this.router.navigate(['/home',bus.from,bus.to]);  //THIS IS ABSOLUTE NAVIGATION
  }
-fromRecentposttoBusDetail(recentBus:Bus)
-{
-  console.log(recentBus.from)
-  console.log(recentBus.to,"Bus clicked")
-  this.router.navigate(['/home',recentBus.from,recentBus.to])
 }
-}
+ 

@@ -13,6 +13,7 @@ export class BusdetailComponent implements OnInit {
   to:string;
   list:Bus[];
   buslist:Bus[];
+  recentBuslist:Bus[]=this._appservice.getBus();
   // movielist:Movie[]= this._appservice.getMovie();
   tempbus:Bus;  
   selectedBus:Bus;
@@ -47,7 +48,14 @@ for(let bus of this.buslist)
 if(this.from==bus.from&&this.to==bus.to)
        {
           this.selectedBus=bus;
-          console.log(this.selectedBus);
+          break;
+       }
+}
+for(let bus of this.recentBuslist)
+{
+if(this.from==bus.from&&this.to==bus.to)
+       {
+          this.selectedBus=bus;
           break;
        }
 }

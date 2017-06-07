@@ -35,12 +35,10 @@ getJsonData()
 }
 toMovieDetail(movie:Movie)
     {
-      console.log(movie.name +" movie clicked");
       this.router.navigate(['/home',movie.name]); //THIS IS ABSOLUTE NAVIGATION
     }
 fromRecentposttoMovieDetail(recentMovie:Movie)
 {
-   console.log(recentMovie.name ," movie clicked");
    this.router.navigate(['/home',recentMovie.name]);
 }
 

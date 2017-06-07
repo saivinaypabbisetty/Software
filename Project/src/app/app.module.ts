@@ -10,7 +10,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import {Bus} from '../models/bus.model'
 import {Movie} from 'models/movie.model'
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {AppService} from 'app/app.service'
 import { MoviesearchComponent } from './search/moviesearch/moviesearch.component';
 import { BussearchComponent } from './search/bussearch/bussearch.component';
